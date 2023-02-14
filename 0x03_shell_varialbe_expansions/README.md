@@ -1,1 +1,2 @@
-Shelll variable
+#!/bin/bash
+shell variable expansions
