@@ -3,8 +3,8 @@
 c=1
 while ((c < 21))
 do
-	echo $i
-	case "$i" in
+	echo $c
+	case "$c" in
 		4) echo "bad luck from China";;
 		9) echo "bad luck from Japan";;
 		17) echo "bad luck from Italy";;
