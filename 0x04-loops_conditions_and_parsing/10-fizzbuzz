@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This script displays numbers from 1 to 100 with FizzBuzz, Fizz, and Buzz conditions
+#This script displays numbers from 1 to 100 with FizzBuzz, Fizz, and Buzz conditions
 
 num=1
 
