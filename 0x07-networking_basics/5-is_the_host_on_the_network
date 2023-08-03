@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# checks ping between device and provided IP address
+
+IP=$1
+if [ -z "$IP" ]
+then
+	fn=$(basename "$0")
+	echo "Usage: ${fn} {IP_ADDRESS}"
+else
+	ping -c 5 "$IP"
+fi

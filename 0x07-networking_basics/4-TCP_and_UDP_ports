@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Display listenign sockets
+
+netstat -l
