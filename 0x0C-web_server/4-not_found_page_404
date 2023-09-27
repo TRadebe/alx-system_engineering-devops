@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# This script sets up a custom 404 error page for Nginx.
+
+# Update the package list to ensure we have the latest information about available packages.
+sudo apt-get update
+
+# Install Nginx.
+sudo apt-get install -y nginx
+
+# Create an index.html file with "Hello World!" content.
+echo "Hello World!" > index.html
+
+# Move the index.html file to the default web directory.
+sudo mv index.html /var/www/html
+
+# Create a custom 404.html error page with a message.
+echo "Ceci n'est pas une page" > 404.html
+
+# Move the custom 404.html file to the default web directory.
+sudo mv 404.html /var/www/html
+
+# Configure the Nginx server block with a custom error page and a redirection.
+echo "server {
+   listen 80 default_server;
+   listen [::]:80 default_server;
+   
+   root /var/www/html;
+   index index.html;
+   
+   # Redirection rule for the '/redirect_me' path.
+   location /redirect_me {
+      return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+   }
+   
+   # Custom error page configuration.
+   error_page 404 /404.html;
+   location = /404.html {
+      internal;
+   }
+}" > default
+
+# Move the default Nginx configuration file to the appropriate directory.
+sudo mv -f default /etc/nginx/sites-available/default
+
+# Restart the Nginx service to apply the configuration changes.
+sudo service nginx restart
+
