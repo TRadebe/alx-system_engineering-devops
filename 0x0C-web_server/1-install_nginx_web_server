@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# installs nginx and configures it on a remote server
+# Installs Nginx with the following configurations:
+#+    Listens on port 80.
+#+    Returns a page containing "Holberton School" when queried
+#++    at the root with a curl GET reprintf %s "
 
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+ssh ubunut@52.87.252.30 -i ~/.ssh/school
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-service nginx start
+sudo sed -i '38i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx start
