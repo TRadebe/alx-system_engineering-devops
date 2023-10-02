@@ -4,7 +4,7 @@
 #+    Returns a page containing "Holberton School" when queried
 #++    at the root with a curl GET reprintf %s "
 
-ssh ubunut@52.87.252.30 -i ~/.ssh/school
+ssh ubunut@18.208.119.43 -i ~/.ssh/school
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
