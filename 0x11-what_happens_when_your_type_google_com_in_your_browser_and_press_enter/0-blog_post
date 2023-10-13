@@ -1,0 +1,35 @@
+Journey of a URL: From Browser to Server
+
+When you type "https://www.google.com" into your browser and hit Enter, it initiates a complex series of events that seamlessly work together to fetch and display the Google homepage. In this blog post, we'll explore each step of this journey, shedding light on the intricate web stack that powers our internet experience.
+
+1. DNS Request:
+
+The process begins with a Domain Name System (DNS) request. The browser needs to translate the human-readable "www.google.com" into an IP address. It queries a DNS server to obtain this mapping. Once resolved, the browser knows where to direct the request.
+
+ 2. TCP/IP:
+
+With the IP address in hand, the browser establishes a Transmission Control Protocol (TCP) connection with the server using the Internet Protocol (IP). TCP ensures reliable data delivery by dividing information into packets and guaranteeing their orderly arrival at the destination.
+
+ 3. Firewall:
+
+As the data travels across the internet, it passes through firewalls—a security barrier that monitors and controls incoming and outgoing network traffic based on predetermined security rules. Firewalls protect against unauthorized access and potential threats.
+
+ 4. HTTPS/SSL:
+
+Security is paramount in today's digital landscape. The browser and server engage in a handshake to establish a secure HTTPS (Hypertext Transfer Protocol Secure) connection. This involves the use of SSL (Secure Sockets Layer) or its successor, TLS (Transport Layer Security), encrypting the data exchanged between them.
+
+ 5. Load-Balancer:
+
+In the case of a giant like Google, multiple servers handle user requests. A load balancer distributes incoming traffic evenly among these servers, optimizing performance and preventing overload on any single server. This ensures a smooth and responsive user experience.
+
+ 6. Web Server:
+
+Once the load balancer selects a server, the web server takes over. It processes the HTTP request, retrieves the necessary files, and sends them back to the browser. In Google's case, these files might include HTML, CSS, and JavaScript that define and style the webpage.
+
+ 7. Application Server:
+
+For dynamic content or user-specific requests, an application server comes into play. It processes application logic, interacts with databases, and generates personalized content. In Google's case, it might handle search queries, personalized recommendations, or user authentication.
+
+ 8. Database:
+
+Behind many web applications, including Google, lies a database. It stores and retrieves data requested by the application server. In Google's case, it could be the vast index of web pages, user preferences, and other relevant information.
